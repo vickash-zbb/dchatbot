@@ -24,7 +24,7 @@
     margin-top: 1rem;
     border-radius: 8px;
     background-color: #8E24EE;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .midbtn svg {
@@ -198,7 +198,12 @@ color: white;
 border: 1px solid #9B39FE;
 color: #9B39FE;
 border-radius: 8px;
-outline: none;}
+outline: none;
+svg{
+    margin-right: 8px;
+}
+
+}
 
 .btn:hover{
     background: #9B39FE;
