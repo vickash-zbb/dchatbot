@@ -3,9 +3,82 @@
   display: flex;
 }
 
+.coverimg {
+  position: relative;
+}
 .coverimg img {
   -o-object-fit: cover;
      object-fit: cover;
   background-position: center;
   width: 100%;
+}
+
+.head {
+  padding: 100px 50px;
+}
+
+.input {
+  padding: 10px 15px;
+  border: 1px solid rgb(180, 180, 180);
+  border-radius: 4px;
+}
+.input input {
+  border: none;
+  outline: none;
+  background: transparent;
+  margin-left: 8px;
+}
+
+.inputdiv {
+  margin-bottom: 16px;
+}
+.inputdiv label {
+  margin: 10px 0px;
+  font-size: 16px;
+}
+
+.headerdiv img {
+  width: 50%;
+}
+
+.primary_btn {
+  padding: 12px 100px;
+  border-radius: 16px;
+  background: #9B39FE;
+  color: white;
+  text-align: center;
+}
+
+.textdiv {
+  position: absolute;
+  top: 100px;
+  text-align: center;
+  right: 1rem;
+  left: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  max-width: 550px;
+}
+
+.footerdiv {
+  position: relative;
+  bottom: 150px;
+  background: rgba(250, 250, 250, 0.8);
+  -webkit-backdrop-filter: saturate(200%) blur(20px);
+          backdrop-filter: saturate(200%) blur(20px);
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 24px;
+  margin: auto;
+  border-radius: 8px;
+}
+.footerdiv .btn {
+  padding: 10px 24px;
+  border: 1px solid #9B39FE;
+  color: #9B39FE;
+  border-radius: 8px;
+}
+.footerdiv button {
+  margin-left: 24px;
 }/*# sourceMappingURL=Login.css.map */

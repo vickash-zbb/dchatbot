@@ -9,14 +9,14 @@ import { MdEmail } from "react-icons/md";
 const Login = () => {
     return (
         <div className='Login'>
-          <div className='container d-flex'>
+          <div className='container d-flex head'>
             <div className='coverimg row'>
               <img src={covering} alt="" className='image col-md-6' />
               <div className="textdiv">
                 <h2 className='tittle'>"Start a Conversation, Find Your Balance</h2>
                 <p>Start a conversation today and take the first step towards a healthier mind."</p>
               </div>
-              <div className="footerdiv">
+              <div className="footerdiv text-center col-md-10">
                 <span className='text'>Don't have a account?</span>
 <Link to={'./register'}>
 <button className='btn'>Sign Up</button>
@@ -25,13 +25,13 @@ const Login = () => {
             </div>
 
               <div className="form col-md-6 d-flex flex-column align-items-center justify-content-center ">
-                <div className="headerdiv">
-                    <img src={logo} alt="" />
+                <div className="headerdiv text-center" >
+                    <img src={logo} alt="logo" />
                     <h3>Welcome Back!</h3>
                 </div>
 
-<form action='' className='form col-md-8'>
-    <span>Login Status will go here</span>
+<form action='' className='form col-md-8 d-flex flex-column'>
+    <span className='text-center'>Login Status will go here</span>
     <div className="inputdiv">  
     <label htmlFor="Email Id">Email Id</label>
     <div className='input'>
@@ -46,7 +46,7 @@ const Login = () => {
  <input type="Password" id='Password' placeholder='Enter Password' />
     </div>
        </div>
-       <Link to={'/chatbot'}> <button>
+       <Link to={'/chatbot'} className='text-center'> <button className='primary_btn'>
         Login
        </button>
        </Link>
