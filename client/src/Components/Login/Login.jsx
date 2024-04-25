@@ -1,32 +1,34 @@
 import React from 'react';
-import './Login.css'
-import covering from '../Assets/loginimg.png'
+import backgroundimg from '../Assets/loginimg.png'
 import logo from '../Assets/logo.png'
 import { Link } from 'react-router-dom';
 import { MdEmail } from "react-icons/md";
 
+import { MdPrivacyTip } from "react-icons/md";
 
+
+import '../Login/Login.css'
 const Login = () => {
     return (
-        <div className='Login'>
-          <div className='container d-flex head'>
-            <div className='coverimg row'>
-              <img src={covering} alt="" className='image col-md-6' />
-              <div className="textdiv">
-                <h2 className='tittle'>"Start a Conversation, Find Your Balance</h2>
-                <p>Start a conversation today and take the first step towards a healthier mind."</p>
-              </div>
-              <div className="footerdiv text-center col-md-10">
-                <span className='text'>Don't have a account?</span>
-<Link to={'./register'}>
-<button className='btn'>Sign Up</button>
-</Link>
-              </div>
-            </div>
-
-              <div className="form col-md-6 d-flex flex-column align-items-center justify-content-center ">
+        <div className='container'>
+            <div className='register row'>
+                <div className='col-md-6 registerleft'>
+                <img src={backgroundimg} alt="" className='coverimage'/>
+                <div className='headtittle'>
+                    <h3>"Start a Conversation, Find Your Balance</h3>
+<p>Start a conversation today and take the first step towards a healthier mind."</p>
+                
+<div className='footerregister'>
+    <span>Did you already have a account..</span>
+    <Link to={'/register'}><button className='btn'>
+        Sign In
+        </button> </Link>
+</div>
+        </div>    </div>
+            
+            <div className="form col-md-6 d-flex flex-column align-items-center justify-content-center ">
                 <div className="headerdiv text-center" >
-                    <img src={logo} alt="logo" />
+                    <img src={logo} alt="logo" className='logo'/>
                     <h3>Welcome Back!</h3>
                 </div>
 
@@ -39,10 +41,12 @@ const Login = () => {
  <input type="text" id='email' placeholder='Enter Email Id' />
     </div>
        </div>
+    
     <div className="inputdiv">  
     <label htmlFor="Password">Password</label>
     <div className='input'>
-    <MdEmail />
+    <MdPrivacyTip />
+
  <input type="Password" id='Password' placeholder='Enter Password' />
     </div>
        </div>
@@ -54,9 +58,9 @@ const Login = () => {
 </form> 
 
               </div>
-
-          </div>
-
+            </div>
+            
+          
         </div>
     );
 }

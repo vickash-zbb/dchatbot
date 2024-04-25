@@ -2,7 +2,8 @@ import React from 'react';
 
 import { FaPlus } from "react-icons/fa";
 import { IoSend } from "react-icons/io5";
-
+import logo from '../Assets/logo.png'
+import userimg from '../Assets/you.png'
 import { IoMdPerson } from "react-icons/io";
 import { CiLogout } from "react-icons/ci";
 import './Chatbot.css'
@@ -17,7 +18,7 @@ const Chatbot = () => {
         <div className="sidebar col-md-3">
           <div className="upperside">
             <div className="uppersidetop">
-              <img src="" className="img-fluid rounded-top logo" alt="logo" />
+              <img src={logo} className="img-fluid rounded-top logo" alt="logo" />
               <span>D-chat</span>
             </div>
             <button className="midbtn">
@@ -34,7 +35,7 @@ const Chatbot = () => {
                 </a>
               </div>
              <Link to={'/'}>
-             <button className="log-btn">
+             <button className="btn">
                 <CiLogout />
                 Log out
               </button>
@@ -46,13 +47,13 @@ const Chatbot = () => {
         <div className="main col-md-9">
           <div className="chats col-md-10">
             <div className="chat">
-              <img src="" alt="" className="usericon" />
+              <img src={userimg} alt="" className="usericon" />
               <p className="txt">
                 Emmet stands out as a powerful and versatile tool for web developers, offering abbreviation expansion for HTML, CSS, and more, which can greatly improve your coding speed and efficiency. It's highly customizable and extendable, supported by a large community, and compatible with multiple editors and IDEs
               </p>
             </div>
             <div className="chat bot">
-              <img src='' alt="" className="userlogo" />
+              <img src={logo} alt="" className="userlogo" />
               <p className="txt">
                 Emmet stands out as a powerful and versatile tool for web developers, offering abbreviation expansion for HTML, CSS, and more, which can greatly improve your coding speed and efficiency. It's highly customizable and extendable, supported by a large community, and compatible with multiple editors and IDEs Emmet stands out as a powerful and versatile tool for web developers, offering abbreviation expansion for HTML, CSS, and more, which can greatly improve your coding speed and efficiency. It's highly customizable and extendable, supported by a large community, and compatible with multiple editors and IDEs
               </p>

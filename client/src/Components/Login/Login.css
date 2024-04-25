@@ -19,8 +19,9 @@
 
 .input {
   padding: 10px 15px;
-  border: 1px solid rgb(180, 180, 180);
-  border-radius: 4px;
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 8px;
+  background: rgb(255, 252, 252);
 }
 .input input {
   border: none;
@@ -30,15 +31,11 @@
 }
 
 .inputdiv {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 .inputdiv label {
   margin: 10px 0px;
   font-size: 16px;
-}
-
-.headerdiv img {
-  width: 50%;
 }
 
 .primary_btn {

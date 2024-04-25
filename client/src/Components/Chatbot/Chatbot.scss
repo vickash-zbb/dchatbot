@@ -45,7 +45,7 @@ button {
 
 .uppersidetop span {
     font-size: 24px;
-    padding-left: 24px;
+    // padding-left: 24px;
     font-weight: 600;
 }
 
@@ -65,10 +65,19 @@ button {
 .listitems a {
     text-decoration: none;
     color:black;
-    margin-left: 16px;
+    // margin-left: 16px;
     font-size: 16px;
 }
-
+.intrestnav{
+    svg{
+        margin-right: 8px;
+    }
+}
+.uppersidetop{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .log-btn {
     width: 100%;
     background: none;
@@ -121,11 +130,15 @@ button {
 }
 .inp{
     padding: 0.25rem;
-    background: rgb(255, 207, 255);
+   
     display: flex;
     align-items: center;
     width: 80%;
-    border-radius: 8px;
+   
+    background: rgba(155, 57, 254, 0.1);
+border: 1px solid #9B39FE;
+box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.2);
+border-radius: 8px;
 }
 .inp>input{
     width: calc(100% - 3rem);
@@ -139,9 +152,22 @@ button {
 .inp>input, .send{
 background: transparent;
 border: none;
-color: white;
+// color: white;
 }
-
+.inp{
+    .send{
+        background-color: #8E24EE;     
+        margin: 0 auto;
+width: 36px;
+height: 36px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 8px; 
+border-radius: 4px;
+    }
+}
 .chats{
     overflow: hidden;
     overflow-y: overlay;
@@ -158,9 +184,29 @@ color: white;
     align-items: flex-start;
     text-align: justify;
     line-height: 2rem;
+    border-radius: 8px;
+    background: #eeeeee;
 }
 .bot{
-    background: rgb(234, 234, 234);
+    background: #F8F1FF;
     width: fit-content;
     border-radius: 8px;
+}
+.btn
+{padding: 10px 24px;
+border: 1px solid #9B39FE;
+color: #9B39FE;
+border-radius: 8px;
+outline: none;}
+
+.btn:hover{
+    background: #9B39FE;
+    border: #9B39FE;
+    color: white;
+    outline: none;
+}
+.chat{
+    p{
+        margin-right: 10px;
+    }
 }
