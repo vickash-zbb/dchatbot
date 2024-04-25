@@ -46,7 +46,7 @@ const Register = () => {
     <div className='input'>
     <IoMdPerson />
 
- <input type="Password" id='Password' placeholder='Enter Password' />
+ <input type="text" id='username' placeholder='Enter Name' />
     </div>
        </div>
     <div className="inputdiv">  
