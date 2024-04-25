@@ -1,0 +1,17 @@
+.questionlist {
+  padding: 50px 100px;
+  background: rgba(155, 57, 254, 0.1);
+  box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  margin-top: 50px;
+}
+.questionlist input {
+  width: 100%;
+}
+.questionlist li {
+  margin-bottom: 50px;
+}
+
+.gender label {
+  display: inline-flex;
+}/*# sourceMappingURL=Question.css.map */

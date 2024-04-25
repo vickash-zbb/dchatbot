@@ -50,7 +50,7 @@ const Login = () => {
  <input type="Password" id='Password' placeholder='Enter Password' />
     </div>
        </div>
-       <Link to={'/chatbot'} className='text-center'> <button className='primary_btn'>
+       <Link to={'/chatbot'} className='text-center mt-3'> <button className='primary_btn'>
         Login
        </button>
        </Link>

@@ -57,8 +57,8 @@ const Register = () => {
  <input type="Password" id='Password' placeholder='Enter Password' />
     </div>
        </div>
-       <Link to={'/chatbot'} className='text-center'> <button className='primary_btn'>
-        Login
+       <Link to={'/questions'} className='text-center mt-3'> <button className='primary_btn'>
+        Register
        </button>
        </Link>
       
