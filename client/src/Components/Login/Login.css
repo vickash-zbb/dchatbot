@@ -1,0 +1,11 @@
+.Login {
+  height: 100vh;
+  display: flex;
+}
+
+.coverimg img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-position: center;
+  width: 100%;
+}/*# sourceMappingURL=Login.css.map */

@@ -1,0 +1,167 @@
+.logo {
+  width: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.mainpage {
+  width: 100%;
+}
+
+.upperside {
+  padding: 2.5rem;
+  /* background-color: gray */
+}
+
+.sidebar {
+  border-right: 1px solid rgb(204, 204, 204);
+  height: 100vh;
+}
+
+.midbtn {
+  padding: 0.5rem;
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 8px;
+  background-color: #8E24EE;
+  color: black;
+}
+
+.midbtn svg {
+  margin-right: 16px;
+  color: white;
+}
+
+.upperside {
+  height: 70%;
+  border-bottom: 1px solid gray;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+.uppersidetop span {
+  font-size: 24px;
+  padding-left: 24px;
+  font-weight: 600;
+}
+
+.lowerside {
+  padding: 0 2.5rem;
+}
+
+.intrestnav {
+  padding: 24px 0px;
+  width: 100%;
+}
+
+.listitems a {
+  text-decoration: none;
+  color: black;
+  margin-left: 16px;
+  font-size: 16px;
+}
+
+.log-btn {
+  width: 100%;
+  background: none;
+  border: 1px solid #8E24EE;
+  color: #8E24EE;
+  padding: 0.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.log-btn svg {
+  margin-right: 16px;
+}
+
+/* =================================== */
+/* Main Chat */
+/* =================================== */
+.userlogo {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 2.5rem;
+  margin: 1rem;
+  margin-top: 0;
+}
+
+.usericon {
+  width: 2.5rem;
+  background: white;
+  border-radius: 8px;
+  margin: 1rem;
+  margin-top: 0;
+}
+
+.main {
+  height: 100%;
+  min-height: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0;
+  justify-content: flex-end;
+}
+
+.chatfooter {
+  margin-top: 1rem;
+  width: 100%;
+  flex-direction: column;
+  margin-top: auto;
+}
+
+.inp {
+  padding: 0.25rem;
+  background: rgb(255, 207, 255);
+  display: flex;
+  align-items: center;
+  width: 80%;
+  border-radius: 8px;
+}
+
+.inp > input {
+  width: calc(100% - 3rem);
+  outline: none;
+  padding: 1rem;
+  color: black;
+}
+
+.inp > input svg {
+  background: transparent;
+}
+
+.inp > input, .send {
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+.chats {
+  overflow: hidden;
+  overflow-y: overlay;
+  scroll-behavior: smooth;
+  /* width: 100%; */
+  max-width: 70rem;
+  /* height: calc(100vh - 17rem); */
+}
+
+.chat {
+  margin: 0.5rem;
+  padding: 1rem 0.5rem;
+  /* font-size: 1.2rem; */
+  display: flex;
+  align-items: flex-start;
+  text-align: justify;
+  line-height: 2rem;
+}
+
+.bot {
+  background: rgb(234, 234, 234);
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 8px;
+}/*# sourceMappingURL=Chatbot.css.map */
