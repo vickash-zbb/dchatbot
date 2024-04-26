@@ -20,7 +20,7 @@ const Register = () => {
     if (Object.keys(errors).length === 0) {
       // Form is valid, navigate to next page
       console.log("Form is valid, navigating to next page");
-      window.location.href = "/chatbot";
+      window.location.href = "/questions";
     } else {
       setErrors(errors);
     }
