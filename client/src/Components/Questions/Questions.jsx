@@ -115,31 +115,31 @@ const Questions = () => {
                       <input
                         type="radio"
                         name="age"
-                        value="16-24"
-                        checked={age === "16-24"}
+                        value="16-18"
+                        checked={age === "16-18"}
                         onChange={handleAgeChange}
                       />
-                      <span>16-24</span>
+                      <span>16-18</span>
                     </label>
                     <label className="mx-3">
                       <input
                         type="radio"
                         name="age"
-                        value="24-32"
-                        checked={age === "24-32"}
+                        value="19-21"
+                        checked={age === "19-21"}
                         onChange={handleAgeChange}
                       />
-                      24-32
+                      19-21
                     </label>
                     <label>
                       <input
                         type="radio"
                         name="age"
-                        value="more than 32"
-                        checked={age === "more than 32"}
+                        value="more than 22"
+                        checked={age === "more than 22"}
                         onChange={handleAgeChange}
                       />
-                      more than 32
+                      more than 22
                     </label>
                     <div className="my-2">Selected age: {age}</div>
                   </div>
