@@ -48,15 +48,11 @@ const Chatbot = () => {
           <div className="chats col-md-10">
             <div className="chat">
               <img src={userimg} alt="" className="usericon" />
-              <p className="txt">
-                Emmet stands out as a powerful and versatile tool for web developers, offering abbreviation expansion for HTML, CSS, and more, which can greatly improve your coding speed and efficiency. It's highly customizable and extendable, supported by a large community, and compatible with multiple editors and IDEs
-              </p>
+              <p className="txt">Hello how can i help you</p>
             </div>
             <div className="chat bot">
               <img src={logo} alt="" className="userlogo" />
-              <p className="txt">
-                Emmet stands out as a powerful and versatile tool for web developers, offering abbreviation expansion for HTML, CSS, and more, which can greatly improve your coding speed and efficiency. It's highly customizable and extendable, supported by a large community, and compatible with multiple editors and IDEs Emmet stands out as a powerful and versatile tool for web developers, offering abbreviation expansion for HTML, CSS, and more, which can greatly improve your coding speed and efficiency. It's highly customizable and extendable, supported by a large community, and compatible with multiple editors and IDEs
-              </p>
+              <p className="txt">Past 3 days i lost interest in every think </p>
             </div>
           </div>
           <div className="chatfooter d-flex justify-content-center align-items-center">
