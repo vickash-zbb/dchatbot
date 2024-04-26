@@ -216,3 +216,22 @@ svg{
         margin-right: 10px;
     }
 }
+
+.btn-secondary{
+    padding: 12px 10px;
+    width: 100%;
+    background: transparent;
+    margin-bottom: 24px;
+    margin-top: 24px;
+    border-radius: 8px;
+    text-align: start;
+}
+.btn-secondary:hover{
+    background: #8E24EE;
+    color: white;
+}
+.btn-secondary{
+    svg{
+        margin-right: 8px;
+    }
+}
