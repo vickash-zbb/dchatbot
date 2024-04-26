@@ -1,6 +1,6 @@
 .questionlist {
   padding: 50px 100px;
-  background: rgba(155, 57, 254, 0.1);
+  background: rgb(255, 254, 254);
   box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   margin-top: 50px;
@@ -14,4 +14,8 @@
 
 .gender label {
   display: inline-flex;
+}
+
+.question {
+  background: rgba(155, 57, 254, 0.1);
 }/*# sourceMappingURL=Question.css.map */

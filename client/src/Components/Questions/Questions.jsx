@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const Questions = () => {
   const [name, setName] = useState("");
   const [gender, setGender] = useState("");
+  const [age, setAge] = useState("");
   const [favoritePerson, setFavoritePerson] = useState("");
   const [feeling, setFeeling] = useState("");
   const [isSad, setIsSad] = useState("");
@@ -14,6 +15,9 @@ const Questions = () => {
   const handleGenderChange = (e) => {
     setGender(e.target.value);
   };
+  const handleAgeChange = (e) => {
+    setAge(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,6 +26,7 @@ const Questions = () => {
     if (
       !name ||
       !gender ||
+      !age ||
       !favoritePerson ||
       !feeling ||
       !isSad ||
@@ -37,6 +42,7 @@ const Questions = () => {
     console.log({
       name,
       gender,
+      age,
       favoritePerson,
       feeling,
       isSad,
@@ -47,8 +53,8 @@ const Questions = () => {
   };
   return (
     <>
-      <div className="question container ">
-        <div className="row justify-content-center">
+      <div className="question">
+        <div className="row justify-content-center w-100">
           <div className="col-md-8 questionlist">
             <form onSubmit={handleSubmit}>
               <ol>
@@ -100,6 +106,42 @@ const Questions = () => {
                       Other
                     </label>
                     <div className="my-2">Selected Gender: {gender}</div>
+                  </div>
+                </li>
+                <li>
+                  <div className="age">
+                    <p>Select age group</p>
+                    <label className="age1">
+                      <input
+                        type="radio"
+                        name="age"
+                        value="16-24"
+                        checked={age === "16-24"}
+                        onChange={handleAgeChange}
+                      />
+                      <span>16-24</span>
+                    </label>
+                    <label className="mx-3">
+                      <input
+                        type="radio"
+                        name="age"
+                        value="24-32"
+                        checked={age === "24-32"}
+                        onChange={handleAgeChange}
+                      />
+                      24-32
+                    </label>
+                    <label>
+                      <input
+                        type="radio"
+                        name="age"
+                        value="more than 32"
+                        checked={age === "more than 32"}
+                        onChange={handleAgeChange}
+                      />
+                      more than 32
+                    </label>
+                    <div className="my-2">Selected age: {age}</div>
                   </div>
                 </li>
                 <li>
