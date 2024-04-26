@@ -242,9 +242,11 @@ const Questions = () => {
                 </li>
               </ol>
               <div className="text-center d-block">
-                <button type="submit" className="primary_btn">
-                  Save and Continue
-                </button>
+                <Link to={"/chatbot"}>
+                  <button type="submit" className="primary_btn">
+                    Save and Continue
+                  </button>
+                </Link>
               </div>
             </form>
           </div>
