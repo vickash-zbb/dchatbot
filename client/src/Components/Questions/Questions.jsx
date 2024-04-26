@@ -1,16 +1,34 @@
 import React, { useState } from "react";
 import "./Question.css";
 import { Link } from "react-router-dom";
+
 const Questions = () => {
   const [name, setName] = useState("");
+  const [nameError, setNameError] = useState("");
+
   const [gender, setGender] = useState("");
+  const [genderError, setGenderError] = useState("");
+
   const [age, setAge] = useState("");
+  const [ageError, setAgeError] = useState("");
+
   const [favoritePerson, setFavoritePerson] = useState("");
+  const [favoritePersonError, setFavoritePersonError] = useState("");
+
   const [feeling, setFeeling] = useState("");
+  const [feelingError, setFeelingError] = useState("");
+
   const [isSad, setIsSad] = useState("");
+  const [isSadError, setIsSadError] = useState("");
+
   const [lostInterest, setLostInterest] = useState("");
+  const [lostInterestError, setLostInterestError] = useState("");
+
   const [restless, setRestless] = useState("");
+  const [restlessError, setRestlessError] = useState("");
+
   const [support, setSupport] = useState("");
+  const [supportError, setSupportError] = useState("");
 
   const handleGenderChange = (e) => {
     setGender(e.target.value);
@@ -22,35 +40,91 @@ const Questions = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validation
-    if (
-      !name ||
-      !gender ||
-      !age ||
-      !favoritePerson ||
-      !feeling ||
-      !isSad ||
-      !lostInterest ||
-      !restless ||
-      !support
-    ) {
-      alert("Please fill in all fields");
-      return;
+    let isValid = true;
+
+    if (!name) {
+      setNameError("Please enter your name");
+      isValid = false;
+    } else {
+      setNameError("");
     }
 
-    // TODO: Handle the form submission
-    console.log({
-      name,
-      gender,
-      age,
-      favoritePerson,
-      feeling,
-      isSad,
-      lostInterest,
-      restless,
-      support,
-    });
+    if (!gender) {
+      setGenderError("Please select your gender");
+      isValid = false;
+    } else {
+      setGenderError("");
+    }
+
+    if (!age) {
+      setAgeError("Please select your age group");
+      isValid = false;
+    } else {
+      setAgeError("");
+    }
+
+    if (!favoritePerson) {
+      setFavoritePersonError("Please enter your favorite person");
+      isValid = false;
+    } else {
+      setFavoritePersonError("");
+    }
+
+    if (!feeling) {
+      setFeelingError("Please enter how you've been feeling lately");
+      isValid = false;
+    } else {
+      setFeelingError("");
+    }
+
+    if (!isSad) {
+      setIsSadError("Please enter your response");
+      isValid = false;
+    } else {
+      setIsSadError("");
+    }
+
+    if (!lostInterest) {
+      setLostInterestError("Please enter your response");
+      isValid = false;
+    } else {
+      setLostInterestError("");
+    }
+
+    if (!restless) {
+      setRestlessError("Please enter your response");
+      isValid = false;
+    } else {
+      setRestlessError("");
+    }
+
+    if (!support) {
+      setSupportError("Please enter your response");
+      isValid = false;
+    } else {
+      setSupportError("");
+    }
+
+    if (isValid) {
+      console.log({
+        name,
+        gender,
+        age,
+        favoritePerson,
+        feeling,
+        isSad,
+        lostInterest,
+        restless,
+        support,
+      });
+      // Navigate to the next page
+      window.location.href = "/chatbot";
+      // TODO: Handle the form submission
+    } else {
+      return; // Add this line
+    }
   };
+
   return (
     <>
       <div className="question">
@@ -70,6 +144,9 @@ const Questions = () => {
                         onChange={(e) => setName(e.target.value)}
                       />
                     </div>
+                    {nameError && (
+                      <div style={{ color: "red" }}>{nameError}</div>
+                    )}
                   </div>
                 </li>
                 <li>
@@ -107,6 +184,9 @@ const Questions = () => {
                     </label>
                     <div className="my-2">Selected Gender: {gender}</div>
                   </div>
+                  {genderError && (
+                    <div style={{ color: "red" }}>{genderError}</div>
+                  )}
                 </li>
                 <li>
                   <div className="age">
@@ -143,6 +223,7 @@ const Questions = () => {
                     </label>
                     <div className="my-2">Selected age: {age}</div>
                   </div>
+                  {ageError && <div style={{ color: "red" }}>{ageError}</div>}
                 </li>
                 <li>
                   <div className="questionlisthead d-flex flex-column my-4">
@@ -158,6 +239,9 @@ const Questions = () => {
                         onChange={(e) => setFavoritePerson(e.target.value)}
                       />
                     </div>
+                    {favoritePersonError && (
+                      <div style={{ color: "red" }}>{favoritePersonError}</div>
+                    )}
                   </div>
                 </li>
                 <li>
@@ -174,6 +258,9 @@ const Questions = () => {
                         onChange={(e) => setFeeling(e.target.value)}
                       />
                     </div>
+                    {feelingError && (
+                      <div style={{ color: "red" }}>{feelingError}</div>
+                    )}
                   </div>
                 </li>
                 <li>
@@ -189,7 +276,10 @@ const Questions = () => {
                         value={isSad}
                         onChange={(e) => setIsSad(e.target.value)}
                       />
-                    </div>
+                    </div>{" "}
+                    {isSadError && (
+                      <div style={{ color: "red" }}>{isSadError}</div>
+                    )}
                   </div>
                 </li>
                 <li>
@@ -205,7 +295,10 @@ const Questions = () => {
                         value={lostInterest}
                         onChange={(e) => setLostInterest(e.target.value)}
                       />
-                    </div>
+                    </div>{" "}
+                    {lostInterestError && (
+                      <div style={{ color: "red" }}>{lostInterestError}</div>
+                    )}
                   </div>
                 </li>
                 <li>
@@ -222,6 +315,9 @@ const Questions = () => {
                         onChange={(e) => setRestless(e.target.value)}
                       />
                     </div>
+                    {restlessError && (
+                      <div style={{ color: "red" }}>{restlessError}</div>
+                    )}
                   </div>
                 </li>
                 <li>
@@ -238,15 +334,16 @@ const Questions = () => {
                         onChange={(e) => setSupport(e.target.value)}
                       />
                     </div>
+                    {supportError && (
+                      <div style={{ color: "red" }}>{supportError}</div>
+                    )}
                   </div>
                 </li>
               </ol>
               <div className="text-center d-block">
-                <Link to={"/chatbot"}>
-                  <button type="submit" className="primary_btn">
-                    Save and Continue
-                  </button>
-                </Link>
+                <button type="submit" className="primary_btn">
+                  Save and Continue
+                </button>
               </div>
             </form>
           </div>
