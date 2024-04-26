@@ -48,11 +48,11 @@ const Chatbot = () => {
           <div className="chats col-md-10">
             <div className="chat">
               <img src={userimg} alt="" className="usericon" />
-              <p className="txt">Hello how can i help you</p>
+              <p className="txt">Iam in depression</p>
             </div>
             <div className="chat bot">
               <img src={logo} alt="" className="userlogo" />
-              <p className="txt">Past 3 days i lost interest in every think </p>
+              <p className="txt">What’s the reason for your depression?</p>
             </div>
           </div>
           <div className="chatfooter d-flex justify-content-center align-items-center">
