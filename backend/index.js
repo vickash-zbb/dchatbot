@@ -1,25 +1,43 @@
+// server.js
 const express = require("express");
-const app = express();
-const OpenAI = require("openai");
-const cors = require("cors");
-require("dotenv").config();
+const axios = require("axios");
 
+const app = express();
 const PORT = process.env.PORT || 3003;
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 app.use(express.json());
-app.use(cors());
 
-app.post("/completion", async (req, res) => {
-  const { input } = req.body;
-  const completion = await openai.chat.completions.create({
-    messages: [
-      { role: "system", content: "You are a helpful assistant." },
-      { role: "user", content: input },
-    ],
-    model: "gpt-3.5-turbo",
-  });
-  res.json({ text: completion.choices[0].message.content });
+// Define a route to handle requests from your React frontend
+app.post("/api/openai", async (req, res) => {
+  try {
+    const { message } = req.body;
+
+    // Forward the message to the OpenAI API
+    const response = await axios.post(
+      "https://api.openai.com/v1/completions",
+      {
+        model: "text-davinci-003",
+        prompt: message,
+        temperature: 0.7,
+        max_tokens: 150,
+        top_p: 1,
+        frequency_penalty: 0,
+        presence_penalty: 0,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+        },
+      }
+    );
+
+    // Send the response back to the client
+    res.json(response.data.choices[0].text.trim());
+  } catch (error) {
+    console.error("Error sending message to OpenAI:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
 });
 
 app.listen(PORT, () => {

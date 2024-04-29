@@ -8,7 +8,7 @@ import { IoMdPerson } from "react-icons/io";
 import { CiLogout } from "react-icons/ci";
 import "./Chatbot.css";
 import { Link } from "react-router-dom";
-// import { sendMsgToOpenAI } from "./openai";
+import { sendMsgToOpenAI } from "../api/Openai";
 
 function Chatbot() {
   //
