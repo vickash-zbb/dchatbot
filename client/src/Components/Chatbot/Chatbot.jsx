@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { FaPlus } from "react-icons/fa";
 import { IoSend } from "react-icons/io5";
@@ -8,8 +8,41 @@ import { IoMdPerson } from "react-icons/io";
 import { CiLogout } from "react-icons/ci";
 import "./Chatbot.css";
 import { Link } from "react-router-dom";
+// import { sendMsgToOpenAI } from "./openai";
 
-const Chatbot = () => {
+function Chatbot() {
+  //
+
+  const msgEnd = useRef(null);
+
+  const [input, setInput] = useState("");
+  const [message, setMessage] = useState([
+    {
+      text: "hi how can i help you",
+      isBot: true,
+    },
+  ]);
+  console.log(input);
+
+  useEffect(() => {
+    msgEnd.current.scrollIntoView();
+  }, [message]);
+
+  const handleSend = async () => {
+    const text = input;
+    setInput("");
+    setMessage([...message, { text, isBot: false }]);
+    const res = await sendMsgToOpenAI(text);
+    setMessage([
+      ...message,
+      { text, isBot: false },
+      { text: res, isBot: true },
+    ]);
+    console.log(res);
+  };
+  const handleEnter = async (e) => {
+    if (e.key == "Enter") await handleSend();
+  };
   return (
     <>
       <div className="mainpage row">
@@ -23,7 +56,12 @@ const Chatbot = () => {
               />
               <span>D-chat</span>
             </div>
-            <button className="midbtn">
+            <button
+              className="midbtn"
+              onClick={() => {
+                window.location.reload();
+              }}
+            >
               <FaPlus />
               New Chat
             </button>
@@ -47,19 +85,40 @@ const Chatbot = () => {
         </div>
         <div className="main col-md-9">
           <div className="chats col-md-10">
-            <div className="chat">
+            {/* <div className="chat">
               <img src={userimg} alt="" className="usericon" />
               <p className="txt">Hello how can i help you</p>
             </div>
             <div className="chat bot">
               <img src={logo} alt="" className="userlogo" />
               <p className="txt">Past 3 days i lost interest in every think </p>
-            </div>
+            </div> */}
+            {message.map((message, i) => {
+              return (
+                <div key={i} className={message.isBot ? "chat bot" : "chat"}>
+                  <img
+                    src={message.isBot ? logo : userimg}
+                    alt=""
+                    className="userlogo"
+                  />
+                  <p className="txt">{message.text}</p>
+                </div>
+              );
+            })}
+            <div ref={msgEnd}></div>
           </div>
           <div className="chatfooter d-flex justify-content-center align-items-center">
             <div className="inp">
-              <input type="text" placeholder="Send a message.." />
-              <button className="send">
+              <input
+                type="text"
+                placeholder="Send a message.."
+                value={input}
+                onKeyDown={handleEnter}
+                onChange={(e) => {
+                  setInput(e.target.value);
+                }}
+              />
+              <button className="send" onClick={handleSend}>
                 <IoSend />
               </button>
             </div>
@@ -72,6 +131,6 @@ const Chatbot = () => {
       </div>
     </>
   );
-};
+}
 
 export default Chatbot;
