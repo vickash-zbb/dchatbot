@@ -3,7 +3,7 @@ import Chatbot from "./Components/Chatbot/Chatbot";
 import Login from "./Components/Login/Login";
 import Questions from "./Components/Questions/Questions";
 import Register from "./Components/Register/Register";
-import Openai from "./Components/api/Openai";
+import sendMsgToOpenAI from "./Components/api/Openai.jsx";
 
 // /import React Dom
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
     path: "/api/openai",
     element: (
       <div>
-        <Openai></Openai>
+        <sendMsgToOpenAI />
       </div>
     ),
   },

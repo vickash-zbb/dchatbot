@@ -10,3 +10,4 @@ export async function sendMsgToOpenAI(message) {
     return "Sorry, there was an error.";
   }
 }
+export default sendMsgToOpenAI;
