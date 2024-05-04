@@ -1,45 +1,47 @@
-// server.js
 const express = require("express");
+const bodyParser = require("body-parser");
 const axios = require("axios");
+const cors = require("cors");
 
 const app = express();
-const PORT = process.env.PORT || 3003;
+const port = 3003;
 
-app.use(express.json());
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
-// Define a route to handle requests from your React frontend
-app.post("/api/openai", async (req, res) => {
+// Middleware
+app.use(bodyParser.json());
+app.use(cors());
+
+// Route for handling incoming chatbot requests
+app.post("http://localhost:3003/api/openai", async (req, res) => {
   try {
     const { message } = req.body;
 
-    // Forward the message to the OpenAI API
+    // Call OpenAI API to generate response
     const response = await axios.post(
       "https://api.openai.com/v1/completions",
       {
-        model: "text-davinci-003",
+        model: "text-davinci-002", // Or any other suitable model
         prompt: message,
-        temperature: 0.7,
-        max_tokens: 150,
-        top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0,
+        max_tokens: 200, // Adjust as needed
       },
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+          Authorization: `Bearer ${OPENAI_API_KEY}`,
         },
       }
     );
 
-    // Send the response back to the client
-    res.json(response.data.choices[0].text.trim());
+    // Send response back to client
+    res.json({ message: response.data.choices[0].text.trim() });
   } catch (error) {
-    console.error("Error sending message to OpenAI:", error);
-    res.status(500).json({ error: "Internal server error" });
+    console.error("Error:", error);
+    res.status(500).json({ error: "An error occurred" });
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+// Start server
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });

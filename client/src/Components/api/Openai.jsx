@@ -3,7 +3,9 @@ import axios from "axios";
 
 export async function sendMsgToOpenAI(message) {
   try {
-    const response = await axios.post("/api/openai", { message });
+    const response = await axios.post("http://localhost:3003/api/openai", {
+      message,
+    });
     return response.data;
   } catch (error) {
     console.error("Error sending message to OpenAI:", error);
