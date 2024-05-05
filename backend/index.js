@@ -10,10 +10,11 @@ const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 // Middleware
 app.use(bodyParser.json());
-app.use(cors());
+// app.use(cors());
+app.use(cors({ origin: "*" }));
 
 // Route for handling incoming chatbot requests
-app.post("http://localhost:3003/api/openai", async (req, res) => {
+app.post("/api/openai", async (req, res) => {
   try {
     const { message } = req.body;
 
