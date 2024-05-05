@@ -9,7 +9,7 @@ export async function sendMsgToOpenAI(message) {
     return response.data;
   } catch (error) {
     console.error("Error sending message to OpenAI:", error);
-    return "Sorry, there was an error.";
+    return "The token has expired.";
   }
 }
 export default sendMsgToOpenAI;
