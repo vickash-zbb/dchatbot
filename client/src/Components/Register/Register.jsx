@@ -83,7 +83,7 @@ const Register = () => {
               <label htmlFor="Email Id">Email Id</label>
               <div className="input">
                 <MdEmail />
-                <input
+                <inpuT
                   type="text"
                   id="email"
                   value={email}
