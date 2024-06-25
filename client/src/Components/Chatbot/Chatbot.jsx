@@ -33,6 +33,7 @@ function Chatbot() {
     setInput("");
     setMessage([...message, { text, isBot: false }]);
     const res = await sendMsgToOpenAI(text);
+    console.log(res, "final");
     setMessage([
       ...message,
       { text, isBot: false },

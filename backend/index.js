@@ -6,7 +6,8 @@ const cors = require("cors");
 const app = express();
 const port = 3003;
 
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const OPENAI_API_KEY =
+  "sk-proj-YppwDmJcL09hvw5PadYwT3BlbkFJbcE44S8j6mmuQ67iqIZC";
 
 // Middleware
 app.use(bodyParser.json());
@@ -22,7 +23,7 @@ app.post("/api/openai", async (req, res) => {
     const response = await axios.post(
       "https://api.openai.com/v1/completions",
       {
-        model: "text-davinci-002", // Or any other suitable model
+        model: "davinci-002", // Or any other suitable model
         prompt: message,
         max_tokens: 200, // Adjust as needed
       },
@@ -33,7 +34,7 @@ app.post("/api/openai", async (req, res) => {
         },
       }
     );
-
+    console.log("Response:", response.data.choices[0].text.trim());
     // Send response back to client
     res.json({ message: response.data.choices[0].text.trim() });
   } catch (error) {

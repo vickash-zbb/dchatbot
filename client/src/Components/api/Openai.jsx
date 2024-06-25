@@ -6,7 +6,7 @@ export async function sendMsgToOpenAI(message) {
     const response = await axios.post("http://localhost:3003/api/openai", {
       message,
     });
-    return response.data;
+    return response.data.message;
   } catch (error) {
     console.error("Error sending message to OpenAI:", error);
     return "The token has expired.";
